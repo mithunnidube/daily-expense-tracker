@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <!-- <link rel="manifest" href="./service-worker.js"> -->
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h1>Daily Expense Tracker</h1>
+
+        <div class="balance-card">
+            <h2>Current Balance</h2>
+            <h3 id="balance">₹0</h3>
+        </div>
+
+        <form id="expenseForm">
+
+            <input type="date" id="date" required>
+
+            <input type="text" id="reason" placeholder="Reason" required>
+
+            <input type="number" id="amount" placeholder="Expense Amount">
+
+            <input type="number" id="received" placeholder="Received Amount">
+
+            <select id="bill">
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <input type="text" id="description" placeholder="Description">
+
+            <button type="submit">Add Entry</button>
+            <!-- <button type="button" id="clearBtn">
+                Clear Form
+            </button> -->
+            <button type="button" id="pdfBtn">Download PDF</button>
+
+            <button type="button" id="clearAllBtn">
+                Clear All
+            </button>
+        </form>
+
+        <table id="expenseTable">
+
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Reason</th>
+                    <th>Expense</th>
+                    <th>Received</th>
+                    <th>Balance</th>
+                    <th>Bill</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="./script.js    "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js");
+}
+</script>
+</body>
+
+</html>
