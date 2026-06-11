@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const CACHE_NAME = "expense-app-v2";
 
 const urlsToCache = [
@@ -53,4 +54,19 @@ self.addEventListener("fetch", event => {
 
     );
 
+=======
+const CACHE_NAME = "expense-app-v1";
+
+self.addEventListener("install", event => {
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.addAll([
+                "./",
+                "./index.html",
+                "./style.css",
+                "./script.js"
+            ]);
+        })
+    );
+>>>>>>> c6bd685c999dc5d77d27b34ffa63daaf7fd5cded
 });
