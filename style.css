@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff9800;
+    --secondary-color: #212121;
+    --text-color: #ffffff;
+    --background-1: rgba(255, 255, 255, 0.1);
+    --background-2: rgba(228, 12, 12, 0.4);
+}
+
+body {
+    background-image: url('./assets/images/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.balance-card {
+    background: var(--background-1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.form {
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px 0;
+    background: var(--background-1);
+    backdrop-filter: blur(10px);
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+input,
+select {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hdr-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hdr-bg {
+    background: var(--background-1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    width: 250px;
+    color: white;
+}
+
+.hdr {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn1 {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background: var(--background-1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.pdf {
+    background: #e53935;
+    color: white;
+}
+
+.clr {
+    background: #2e7d32;
+    color: white;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 700px;
+}
+
+th {
+    background: #222;
+    color: white;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.addent-container {
+    margin-top: 15px;
+}
+
+.addent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addent-btn {
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50px;
+    padding: 12px 25px;
+    border: none;
+}
+
+#testFirebaseBtn {
+    margin-top: 20px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .hdr-btn {
+        flex-direction: column;
+    }
+
+    .hdr-bg {
+        width: 100%;
+    }
+
+    .btn1 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+
+    .addent {
+        justify-content: center;
+    }
+
+    .addent-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .balance-card h2 {
+        font-size: 18px;
+    }
+
+    .balance-card h3 {
+        font-size: 24px;
+    }
+
+    .btn1 button {
+        width: 100%;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}

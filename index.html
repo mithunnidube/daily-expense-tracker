@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Daily Expense Tracker</h1>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <h2>Current Balance</h2>
+            <h3 id="balance">₹0</h3>
+        </div>
+
+        <!-- Header Section -->
+        <div class="hdr-btn">
+
+            <div class="hdr-bg">
+                <div class="hdr">
+                    <h4>🏠 HOME</h4>
+                    <h4>⚙️ SETTINGS</h4>
+                    <h4>🔔 UPDATES</h4>
+                </div>
+            </div>
+
+            <div class="btn1">
+                <button class="pdf" type="button" id="pdfBtn">
+                    Download PDF
+                </button>
+
+                <button class="clr" type="button" id="clearAllBtn">
+                    Clear All
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Form -->
+        <form id="expenseForm" class="form">
+
+            <input type="date" id="date" required>
+
+            <input type="text" id="reason" placeholder="Reason" required>
+
+            <input type="number" id="amount" placeholder="Expense Amount">
+
+            <input type="number" id="received" placeholder="Received Amount">
+
+            <select id="bill">
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <input type="text" id="description" placeholder="Description">
+
+        </form>
+
+        <!-- Add Entry Button -->
+        <div class="addent-container">
+            <div class="addent">
+                <button class="addent-btn" type="submit" form="expenseForm">
+                    Add Entry
+                </button>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Responsive Table -->
+        <div class="table-wrapper">
+
+            <table id="expenseTable">
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Reason</th>
+                        <th>Expense</th>
+                        <th>Received</th>
+                        <th>Balance</th>
+                        <th>Bill</th>
+                        <th>Description</th>
+                         <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <br>
+
+        <!-- Firebase Test -->
+        <button id="testFirebaseBtn" onclick="testFirebase()">
+            Test Firebase
+        </button>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./service-worker.js");
+        }
+    </script>
+
+    <script type="module" src="./firebase-test.js"></script>
+
+</body>
+
+</html>
